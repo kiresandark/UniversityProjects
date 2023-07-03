@@ -1,30 +1,28 @@
-
-import pandas 
+import math as mth
+import pandas as pnds
 from scipy.stats import spearmanr
 
-df = pandas.DataFrame({'Year':['1996', '1997', '1998', '1999', '2000', '2001', '2002'],
-'cereals':[69.3, 88.6, 47.9, 54.7, 65.5, 85.2, 86.6],
-'wheat':[34.9, 44.3, 27.0, 31.0, 34.5, 47.0, 57.7]})
-df.to_pickle('grain_production_1996–2002.pkl')
+df = pnds.read_pickle('C:\\Git\\UniversityProjects\\1C1S_ProbabilisticModels\\grain_production_1996–2002.pkl')
 # Чтобы вычислить корреляцию рейтинга Спирмена между оценками по математике и естественным наукам , мы можем использовать spearmanr() из scipy.stats:
 
-#calculate Spearman Rank correlation and corresponding p-value
-# rho, p = spearmanr(df['cereals'], df['wheat'])
+rho, p = spearmanr(df['cereals'], df['wheat'])
+
 
 #напечатать ранговая корреляция Спирмена и p-значение
-# print(rho)
-
-# -0.41818181818181815
-
-# print(p)
-
-# 0.22911284098281892
+print('rank correlation: ' + str(rho))
+print('p-Value: ' + str(p))
 
 
 #Коэффициент ранговой корреляции Спирмена
 # spearmanr(df['math'], df['science'])[0]
 
-# -0.41818181818181815
-
 #извлечь p-значение ранговой корреляции Спирмена
 # spearmanr(df['math'], df['science'])[1] 
+import math as mth
+m = 4.48
+res = mth.pow((4.34 - m), 2)
+res = mth.pow((0.67 - m), 2) + res
+res = mth.pow((1.97 - m), 2) + res
+res = mth.pow((8.64 - m), 2) + res
+res = mth.pow((6.62 - m), 2) + res
+print(str(mth.sqrt(res/5)))
