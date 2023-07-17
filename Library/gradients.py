@@ -1,3 +1,8 @@
+'''
+https://habr.com/ru/articles/547424/
+
+by psidelnikov
+'''
 import numpy as np
 import matplotlib.pyplot as plot
 
